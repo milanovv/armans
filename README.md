@@ -1,4 +1,4 @@
-# Midter I
+# Midterm I
 
 ## Tasks
 
