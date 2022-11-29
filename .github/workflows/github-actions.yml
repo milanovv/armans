@@ -1,0 +1,24 @@
+name: CI/CD
+
+on:
+  push:
+  pull_request:
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+          
+  deploy:
+   runs-on: ubuntu-latest
+   if: github.ref == 'refs/heads/production'
+   steps:
+     - name: Print hello world
+       run: python -c "print('Hello, Arman!')"
